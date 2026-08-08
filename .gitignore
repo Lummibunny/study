@@ -7,8 +7,8 @@ __pycache__/
 # 索引文件（可重新构建，不入库）
 index/
 
-# 论文原始 PDF（体积大，建议不入库，markdown 已入库）
-papers/*.pdf
+# PDF 一律不入库（体积大，markdown 已入库）
+*.pdf
 
 # 系统文件
 .DS_Store
