@@ -52,7 +52,7 @@ def get_parser():
     return LlamaParse(
         api_key=api_key,
         result_type="markdown",     # 输出 Markdown
-        language="ch",              # 中英文论文
+        language="ch_sim",          # 简体中文（en/ch_sim/ch_tra/ja/ko 等）
         verbose=False,
     )
 
@@ -72,6 +72,11 @@ def convert_one(parser, pdf_path: Path, force: bool) -> bool:
 
     # LlamaParse 返回文档列表，拼接所有页面文本
     md_text = "\n\n".join(doc.text for doc in documents if doc.text)
+
+    # 解析结果为空视为失败，不生成文件
+    if not md_text.strip():
+        print(f"  [失败] {pdf_path.name}: 解析结果为空")
+        return False
 
     # 加个简单的文件头，标注来源
     header = (
