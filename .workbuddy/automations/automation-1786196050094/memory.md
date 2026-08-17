@@ -224,3 +224,10 @@
 - 推送: 3d8f911..35bd037 main -> main（https://github.com/Lummibunny/study）
 - 提交文件: .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，非笔记内容；补推 08-16 23:55 记录）
 - 备注: 暂存区无 pdf（grep 无匹配验证通过），`git ls-files '*.pdf'` 计数为 0，`.gitignore` `*.pdf` 规则生效；推送后工作区干净，main 与 origin/main 同步。github.com 连接不稳定第 8 次复现（本次 push 无报错但挂起约 17 分钟，最终成功，可能网络拥塞）。循环噪音问题第 31 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
+
+### 2026-08-17 11:38
+- 结果: 有 1 个暂存更改，commit 成功；push 首次因 Recv failure: Operation timed out 超时失败（15m55s），测连通性（github.com HTTP 200, 3.2s）后重试一次成功（2s）
+- 提交: 432cffe "auto-sync: 定时同步 2026-08-17 11:38"
+- 推送: 35bd037..432cffe main -> main（https://github.com/Lummibunny/study）
+- 提交文件: .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，非笔记内容；补推 05:59 记录）
+- 备注: 暂存区无 pdf（grep 无匹配验证通过），`git ls-files '*.pdf'` 计数为 0，`.gitignore` `*.pdf` 规则生效；推送后工作区干净，main 与 origin/main 同步。github.com 连接不稳定第 9 次复现（Recv timeout 16m 后重试 2s 成功），模式与以往一致：先 curl 测连通性再用快速失败配置重试。循环噪音问题第 32 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
