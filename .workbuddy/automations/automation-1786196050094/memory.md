@@ -285,3 +285,9 @@
 - 推送: a6f1dde..0febcbd main -> main（https://github.com/Lummibunny/study）
 - 提交文件: .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，非笔记内容；补推 06:33 记录）
 - 备注: 暂存区无 pdf（grep 无匹配验证通过），`git ls-files '*.pdf'` 计数为 0，`.gitignore` `*.pdf` 规则生效；推送后工作区干净，main 与 origin/main 同步。循环噪音问题第 40 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
+
+### 2026-08-19 22:49
+- 结果: 工作区 porcelain 为空（无新文件更改）；但本地领先 origin/main 1 个提交（b201acd，08-19 17:43 的 auto-sync，上次执行 commit 后 push 未完成），已补推成功
+- 推送: 0febcbd..b201acd main -> main（https://github.com/Lummibunny/study）
+- 提交文件: b201acd 仅含 .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，非笔记内容），无 PDF
+- 备注: 暂存区无 pdf（`git ls-files '*.pdf'` 计数为 0），`.gitignore` 第 11 行 `*.pdf` 规则生效。push 重试 3 次：①快速失败配置 Operation too slow（15m27s）；②放宽 lowSpeedLimit=500/lowSpeedTime=45 仍 Operation too slow（11m18s）；③改用 `-c http.version=HTTP/1.1` + lowSpeedLimit=100/lowSpeedTime=60 一次成功（约 1 分钟内）。github.com 主站极慢（curl 20s 超时截断，HTTP 200），api.github.com 0.38s 正常。**新经验：github.com 主站传输过慢时，HTTP/2 下即使放宽速度阈值仍会 Operation too slow，改用 HTTP/1.1 协议可绕过**（与 08-09 HTTP2 framing 错误互为印证，建议 push 重试时优先加 `-c http.version=HTTP/1.1`）。循环噪音问题第 41 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
