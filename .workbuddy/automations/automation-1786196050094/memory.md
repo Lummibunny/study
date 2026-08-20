@@ -305,3 +305,10 @@
 - 推送: bf0513f..6a6b510 main -> main（https://github.com/Lummibunny/study）
 - 提交文件: .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，非笔记内容；补推 05:00 记录）
 - 备注: 暂存区无 pdf（grep 无匹配验证通过），`git ls-files '*.pdf'` 计数为 0，`.gitignore` `*.pdf` 规则生效；推送后工作区干净，main 与 origin/main 同步。循环噪音问题第 43 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
+
+### 2026-08-20 15:23
+- 结果: 有 1 个暂存更改，commit 成功；push 首次因 Operation too slow 失败（快速失败配置，github.com 主站 curl 耗时 920s 极慢但 HTTP 200，api.github.com 0.45s 正常），改用 `-c http.version=HTTP/1.1` + lowSpeedLimit=100/lowSpeedTime=60 重试一次成功
+- 提交: 8847153 "auto-sync: 定时同步 2026-08-20 15:23"
+- 推送: 6a6b510..8847153 main -> main（https://github.com/Lummibunny/study）
+- 提交文件: .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，非笔记内容；补推 09:57 记录）
+- 备注: 暂存区无 pdf（grep 无匹配验证通过），`git ls-files '*.pdf'` 计数为 0，`.gitignore` 第 11 行 `*.pdf` 规则生效；推送后工作区干净，main 与 origin/main 同步。github.com 连接不稳定第 11 次复现，模式与 08-19 22:49 完全一致（主站极慢、api 正常），HTTP/1.1 方案再次验证有效。循环噪音问题第 44 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
