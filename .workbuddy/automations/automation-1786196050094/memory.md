@@ -312,3 +312,10 @@
 - 推送: 6a6b510..8847153 main -> main（https://github.com/Lummibunny/study）
 - 提交文件: .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，非笔记内容；补推 09:57 记录）
 - 备注: 暂存区无 pdf（grep 无匹配验证通过），`git ls-files '*.pdf'` 计数为 0，`.gitignore` 第 11 行 `*.pdf` 规则生效；推送后工作区干净，main 与 origin/main 同步。github.com 连接不稳定第 11 次复现，模式与 08-19 22:49 完全一致（主站极慢、api 正常），HTTP/1.1 方案再次验证有效。循环噪音问题第 44 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
+
+### 2026-08-20 20:35
+- 结果: 有 1 个暂存更改，commit 成功；push 首次因 SSL connection timeout 失败（快速失败配置 5 分钟内失败，github.com 主站 curl HTTP 000 不可达 20s 超时，api.github.com 0.44s 正常），改用 `-c http.version=HTTP/1.1` + lowSpeedLimit=100/lowSpeedTime=60 重试一次成功
+- 提交: d327819 "auto-sync: 定时同步 2026-08-20 20:35"
+- 推送: 8847153..d327819 main -> main（https://github.com/Lummibunny/study）
+- 提交文件: .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，非笔记内容；补推 15:23 记录）
+- 备注: 暂存区无 pdf（grep 无匹配验证通过），`git ls-files '*.pdf'` 计数为 0，`.gitignore` 第 11 行 `*.pdf` 规则生效（check-ignore 验证 papers/*.pdf 被忽略）；推送后工作区干净，main 与 origin/main 同步。github.com 连接不稳定第 12 次复现（本次主站 HTTP 000 完全不可达而非极慢，与 08-16 23:55 模式一致），HTTP/1.1 方案第 4 次验证有效。循环噪音问题第 45 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
