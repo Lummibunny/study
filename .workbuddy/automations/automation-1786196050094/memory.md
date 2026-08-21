@@ -326,3 +326,10 @@
 - 推送: d327819..5ed22a2 main -> main（https://github.com/Lummibunny/study）；最终确认 `git status -sb` 为 `## main...origin/main`（无 ahead/behind），origin/main..main 差异为 0
 - 提交文件: .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，非笔记内容；补推 08-20 20:35 记录）
 - 备注: 暂存区无 pdf（grep 无匹配验证通过），`git ls-files '*.pdf'` 计数为 0，`.gitignore` 第 11 行 `*.pdf` 规则生效（check-ignore 验证 papers/2024_Gou_Circular_Economy_Fuzzy_Set_Theory.pdf 被忽略）；推送后工作区干净，main 与 origin/main 同步。github.com 连接不稳定第 13 次复现，本次过程复杂：①快速失败配置 Operation too slow（15m58s，主站 curl 20s 极慢 HTTP 200，api 0.39s 正常）；②HTTP/1.1 方案连接阶段超时（Failed to connect port 443 after 978s，主站完全不可达 HTTP 000，curl --max-time 20 竟挂 1036s，验证 --max-time 不约束连接阶段）；③探测恢复（3 连 HTTP 200 连接 0.1s）后 HTTP/1.1 push 挂起 31m32s 无输出被手动停止；④再探测正常后快速失败配置 push 输出 "Everything up-to-date"，证明③实际已推送成功。经验更新：挂起的 push 即使被杀也可能已实际完成，重试前应先跑一次快速 push 看是否 up-to-date，或直接 `git status -sb` 检查 ahead 数。循环噪音问题第 46 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
+
+### 2026-08-21 14:08
+- 结果: 有 1 个暂存更改，commit 成功；push 首次因 Operation too slow 失败（快速失败配置，github.com 主站 curl 连接挂起 930s HTTP 000 完全不可达，api.github.com 0.8s 正常），改用 `--connect-timeout 15` 快速探测（3 连 HTTP 200 连接 0.13-0.28s 正常但传输慢 15-25s）确认主站恢复后，用 `-c http.version=HTTP/1.1` + lowSpeedLimit=100/lowSpeedTime=60 重试一次成功
+- 提交: 08d94cb "auto-sync: 定时同步 2026-08-21 14:08"
+- 推送: 5ed22a2..08d94cb main -> main（https://github.com/Lummibunny/study）
+- 提交文件: .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，非笔记内容；补推 02:06 记录）
+- 备注: 暂存区无 pdf（grep 无匹配验证通过），`git ls-files '*.pdf'` 计数为 0，`.gitignore` `*.pdf` 规则生效；推送后工作区干净，`git status -sb` 为 `## main...origin/main`（无 ahead/behind）。github.com 连接不稳定第 14 次复现，模式与 08-16 23:55 / 08-20 20:35 一致（主站连接挂起不可达、api 正常）；经验补充：连通性探测务必加 `--connect-timeout 15` 约束连接阶段，否则 `--max-time` 不生效会挂 15 分钟（本次初始探测即因此挂 930s）。HTTP/1.1 方案第 5 次验证有效。循环噪音问题第 47 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
