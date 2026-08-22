@@ -339,3 +339,10 @@
 - 推送: 08d94cb..d8b8a87 main -> main（https://github.com/Lummibunny/study）
 - 提交文件: d8b8a87 仅含 .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，非笔记内容），无 PDF
 - 备注: 暂存区无 pdf（`git ls-files '*.pdf'` 计数为 0），`.gitignore` `*.pdf` 规则生效。push 经历 2 次失败后成功：①快速失败配置 Operation too slow（15m+）；②HTTP/1.1 + lowSpeedLimit=100/lowSpeedTime=60 仍 Operation too slow（15m42s）；此时 curl 测连通性 github.com/api.github.com 均 HTTP 200 且连接 0.1s（说明连接正常仅传输阶段慢，与历史模式一致）；③HTTP/1.1 + lowSpeedLimit=100/lowSpeedTime=90（放宽低速窗口）一次成功。经验：当 HTTP/1.1 + 60s 低速窗口仍失败时，将 lowSpeedTime 放宽到 90s 可能有效（传输慢但最终能完成）。循环噪音问题第 48 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
+
+### 2026-08-22 08:34
+- 结果: 有 1 个暂存更改，commit + push 一次成功（网络稳定，快速失败配置一次成功）
+- 提交: 2fabd0c "auto-sync: 定时同步 2026-08-22 08:34"
+- 推送: d8b8a87..2fabd0c main -> main（https://github.com/Lummibunny/study）
+- 提交文件: .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，非笔记内容；补推 03:11 记录）
+- 备注: 暂存区无 pdf（grep 无匹配验证通过），`git ls-files '*.pdf'` 计数为 0，`.gitignore` `*.pdf` 规则生效（check-ignore 验证 papers/2024_Gou_Circular_Economy_Fuzzy_Set_Theory.pdf 被忽略）；推送后工作区干净，main 与 origin/main 同步。循环噪音问题第 49 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
