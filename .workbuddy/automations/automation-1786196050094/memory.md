@@ -333,3 +333,9 @@
 - 推送: 5ed22a2..08d94cb main -> main（https://github.com/Lummibunny/study）
 - 提交文件: .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，非笔记内容；补推 02:06 记录）
 - 备注: 暂存区无 pdf（grep 无匹配验证通过），`git ls-files '*.pdf'` 计数为 0，`.gitignore` `*.pdf` 规则生效；推送后工作区干净，`git status -sb` 为 `## main...origin/main`（无 ahead/behind）。github.com 连接不稳定第 14 次复现，模式与 08-16 23:55 / 08-20 20:35 一致（主站连接挂起不可达、api 正常）；经验补充：连通性探测务必加 `--connect-timeout 15` 约束连接阶段，否则 `--max-time` 不生效会挂 15 分钟（本次初始探测即因此挂 930s）。HTTP/1.1 方案第 5 次验证有效。循环噪音问题第 47 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
+
+### 2026-08-22 03:11
+- 结果: 工作区 porcelain 为空（无新文件更改）；但本地领先 origin/main 1 个提交（d8b8a87，08-21 21:03 的 auto-sync，上次执行 commit 后 push 未完成），已补推成功
+- 推送: 08d94cb..d8b8a87 main -> main（https://github.com/Lummibunny/study）
+- 提交文件: d8b8a87 仅含 .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，非笔记内容），无 PDF
+- 备注: 暂存区无 pdf（`git ls-files '*.pdf'` 计数为 0），`.gitignore` `*.pdf` 规则生效。push 经历 2 次失败后成功：①快速失败配置 Operation too slow（15m+）；②HTTP/1.1 + lowSpeedLimit=100/lowSpeedTime=60 仍 Operation too slow（15m42s）；此时 curl 测连通性 github.com/api.github.com 均 HTTP 200 且连接 0.1s（说明连接正常仅传输阶段慢，与历史模式一致）；③HTTP/1.1 + lowSpeedLimit=100/lowSpeedTime=90（放宽低速窗口）一次成功。经验：当 HTTP/1.1 + 60s 低速窗口仍失败时，将 lowSpeedTime 放宽到 90s 可能有效（传输慢但最终能完成）。循环噪音问题第 48 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
