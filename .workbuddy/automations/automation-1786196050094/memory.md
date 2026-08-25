@@ -436,3 +436,17 @@
 - 推送: 3b87c00..92672c3 main -> main（https://github.com/Lummibunny/study）；`git status -sb` 为 `## main...origin/main`（无 ahead/behind，rev-list 计数 0）
 - 提交文件: .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，补推 11:41 记录；7 行新增）
 - 备注: 暂存区无 pdf（grep 无匹配验证通过），`git ls-files '*.pdf'` 计数为 0，`.gitignore` `*.pdf` 规则生效（check-ignore 验证 papers/2024_Gou_Circular_Economy_Fuzzy_Set_Theory.pdf 被忽略）；推送后工作区干净。本次无用户笔记更改，仅自动化记忆文件自身。github.com 连接不稳定第 17 次复现：①快速失败配置 Operation too slow；②HTTP/1.1 连接阶段失败（75015ms）；③curl 探测 github.com 主站 HTTP 000 连续约 90s 不可达（api.github.com 0.48s 正常），等待约 90s 后主站恢复（HTTP 200，连接 0.14s，传输 13.3s 仍偏慢）；④HTTP/1.1 + lowSpeedLimit=100/lowSpeedTime=90 重试一次成功。经验印证：主站不可达时等待 + 周期性探测（--connect-timeout 15）再重试有效，本次全程约 4 分钟完成（相比历史 16 分钟超时显著缩短）。循环噪音问题第 62 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
+
+### 2026-08-25 22:39（推送失败，下次执行需补推）
+- 结果: 有 1 个暂存更改，commit 成功；push 多次尝试全部失败（github.com 主站持续不可用，本次为历史最严重一次）
+- 提交: e22e80a "auto-sync: 定时同步 2026-08-25 22:39"（本地已存在，**未推送成功**，`git status -sb` 为 `## main...origin/main [ahead 1]`，rev-list 计数 1）
+- 提交文件: .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，补推 17:10 记录；7 行新增）。无用户笔记更改，无 PDF
+- 推送尝试过程（约 1.5 小时，github.com 连接不稳定第 18 次复现且最严重）：
+  ① 快速失败配置 push：连接 github.com:443 超时 710s（11m50s）
+  ② 探测：api.github.com HTTP 200/0.71s 正常；github.com 主站连接 0.15s 但传输阶段挂起 942s HTTP 000（--max-time 30 不约束传输阶段，再次验证）
+  ③ HTTP/1.1 + lowSpeedLimit=100/lowSpeedTime=90 push：Operation too slow（16m1s）
+  ④ python http.client 探测主站恢复（HTTP 200），快速失败配置 push 立即 Operation too slow（<1000B/s 30s）
+  ⑤ HTTP/1.1 + lowSpeedTime=120 push：连接超时 930s（15m30s）
+  ⑥ 自动探测+重试脚本（python 循环，最多 15 轮）：探测 2 次全超时后脚本卡死（DNS 解析挂起，python 层面无法约束），手动 kill（PID 48159）；**经验：探测脚本需用 socket 级 DNS 超时或换用 git ls-remote 探测，勿用纯 http.client 长循环**
+  ⑦ 最后一次 HTTP/1.1 + lowSpeedLimit=500/lowSpeedTime=90：Operation too slow 失败
+- 备注: 暂存区无 pdf（grep 无匹配验证通过），`git ls-files '*.pdf'` 计数为 0，`.gitignore` `*.pdf` 规则生效（check-ignore 验证 papers/2024_Gou_Circular_Economy_Fuzzy_Set_Theory.pdf 被忽略）。**下次执行注意：porcelain 可能为空但本地 ahead 1，务必先 `git status -sb` 检查 ahead 并补推（参照 08-19 06:33 教训）**。github.com 主站本次异常约 1.5 小时（时通时断：连接正常但传输挂起 / 连接超时交替出现），api.github.com 全程正常；建议下次执行时若仍不可用，直接采用 HTTP/1.1 + lowSpeedLimit=100/lowSpeedTime=120 重试或等待主站恢复。循环噪音问题第 63 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
