@@ -437,6 +437,13 @@
 - 提交文件: .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，补推 11:41 记录；7 行新增）
 - 备注: 暂存区无 pdf（grep 无匹配验证通过），`git ls-files '*.pdf'` 计数为 0，`.gitignore` `*.pdf` 规则生效（check-ignore 验证 papers/2024_Gou_Circular_Economy_Fuzzy_Set_Theory.pdf 被忽略）；推送后工作区干净。本次无用户笔记更改，仅自动化记忆文件自身。github.com 连接不稳定第 17 次复现：①快速失败配置 Operation too slow；②HTTP/1.1 连接阶段失败（75015ms）；③curl 探测 github.com 主站 HTTP 000 连续约 90s 不可达（api.github.com 0.48s 正常），等待约 90s 后主站恢复（HTTP 200，连接 0.14s，传输 13.3s 仍偏慢）；④HTTP/1.1 + lowSpeedLimit=100/lowSpeedTime=90 重试一次成功。经验印证：主站不可达时等待 + 周期性探测（--connect-timeout 15）再重试有效，本次全程约 4 分钟完成（相比历史 16 分钟超时显著缩短）。循环噪音问题第 62 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
 
+### 2026-08-26 05:33
+- 结果: 有 1 个暂存更改，commit 成功；同时补推上次未成功的 e22e80a；push 经历 2 次尝试后成功
+- 提交: 554bb53 "auto-sync: 定时同步 2026-08-26 05:33"（1 文件 14 行新增）
+- 推送: 92672c3..554bb53 main -> main（https://github.com/Lummibunny/study）；`git status -sb` 为 `## main...origin/main`（无 ahead/behind，rev-list 计数 0）
+- 提交文件: .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，补推 22:39 记录）。无用户笔记更改，无 PDF
+- 备注: 暂存区无 pdf（grep 无匹配验证通过），`git ls-files '*.pdf'` 计数为 0，`.gitignore` `*.pdf` 规则生效；推送范围内（92672c3..554bb53）无 PDF。push 过程：①快速失败配置 Operation too slow（30s <1000B/s，github.com 主站传输挂起）；②curl 探测：github.com 连接阶段挂起 940s HTTP 000（--max-time 20 不约束连接阶段，第 N 次验证）、api.github.com 0.82s 正常；③python socket 探测脚本失败（getaddrinfo 不支持 timeout 参数，3.13.12 实测），随后 nslookup/dig 确认 DNS 正常（223.6.6.6 → 20.205.243.166）且 curl --resolve 直连主站 HTTP 200 仅 0.93s——**判定为 DNS/系统解析临时故障而非主站故障**；④未等探测脚本，直接 HTTP/1.1 + lowSpeedLimit=100/lowSpeedTime=90 重试一次成功。经验更新：curl 连接阶段挂起 940s 且 api 正常时，先 `dig +short github.com` 确认 DNS 是否正常、再 `curl --resolve` 直连 IP 测主站，若直连正常则直接重试 push 即可（DNS 缓存刷新后 git 即可正常解析）。循环噪音问题第 64 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
+
 ### 2026-08-25 22:39（推送失败，下次执行需补推）
 - 结果: 有 1 个暂存更改，commit 成功；push 多次尝试全部失败（github.com 主站持续不可用，本次为历史最严重一次）
 - 提交: e22e80a "auto-sync: 定时同步 2026-08-25 22:39"（本地已存在，**未推送成功**，`git status -sb` 为 `## main...origin/main [ahead 1]`，rev-list 计数 1）
