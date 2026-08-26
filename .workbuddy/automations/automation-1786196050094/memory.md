@@ -457,3 +457,10 @@
   ⑥ 自动探测+重试脚本（python 循环，最多 15 轮）：探测 2 次全超时后脚本卡死（DNS 解析挂起，python 层面无法约束），手动 kill（PID 48159）；**经验：探测脚本需用 socket 级 DNS 超时或换用 git ls-remote 探测，勿用纯 http.client 长循环**
   ⑦ 最后一次 HTTP/1.1 + lowSpeedLimit=500/lowSpeedTime=90：Operation too slow 失败
 - 备注: 暂存区无 pdf（grep 无匹配验证通过），`git ls-files '*.pdf'` 计数为 0，`.gitignore` `*.pdf` 规则生效（check-ignore 验证 papers/2024_Gou_Circular_Economy_Fuzzy_Set_Theory.pdf 被忽略）。**下次执行注意：porcelain 可能为空但本地 ahead 1，务必先 `git status -sb` 检查 ahead 并补推（参照 08-19 06:33 教训）**。github.com 主站本次异常约 1.5 小时（时通时断：连接正常但传输挂起 / 连接超时交替出现），api.github.com 全程正常；建议下次执行时若仍不可用，直接采用 HTTP/1.1 + lowSpeedLimit=100/lowSpeedTime=120 重试或等待主站恢复。循环噪音问题第 63 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
+
+### 2026-08-26 11:14
+- 结果: 有 1 个暂存更改，commit + push 一次成功（网络稳定，快速失败配置一次成功）
+- 提交: 6935f60 "auto-sync: 定时同步 2026-08-26 11:14"
+- 推送: 554bb53..6935f60 main -> main（https://github.com/Lummibunny/study）
+- 提交文件: .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，补推 08-25 22:39 失败记录与 08-26 05:33 记录；7 行新增）
+- 备注: 暂存区无 pdf（grep 无匹配验证通过），`git ls-files '*.pdf'` 计数为 0，`.gitignore` `*.pdf` 规则生效；推送后工作区干净，`git status -sb` 为 `## main...origin/main`（无 ahead/behind，rev-list 计数 0）。本次无用户笔记更改，仅自动化记忆文件自身。循环噪音问题第 65 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
