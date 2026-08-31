@@ -548,3 +548,16 @@
 - 推送: 03b3ad9..a786a41 main -> main（https://github.com/Lummibunny/study）
 - 提交文件: a786a41 仅含 .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件），无 PDF
 - 备注: 暂存区无 pdf（`git ls-files '*.pdf'` 计数为 0，diff 03b3ad9..a786a41 无 pdf，grep exit=1），`.gitignore` `*.pdf` 规则生效；推送后工作区干净，`git status -sb` 为 `## main...origin/main`（无 ahead/behind，rev-list 计数 0）。本次快速失败配置一次成功（网络稳定，秒级完成）。本次无用户笔记更改，仅自动化记忆文件自身。循环噪音问题第 78 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
+
+### 2026-08-30 21:05（推送失败，本次执行补推成功）
+- 结果: 有 1 个暂存更改，commit 成功；push 未完成（本地 ahead 1），本次执行补推成功
+- 提交: 68baa22 "auto-sync: 定时同步 2026-08-30 21:05"（本地已存在，本次补推）
+- 推送: a786a41..68baa22 main -> main（https://github.com/Lummibunny/study）；`git status -sb` 为 `## main...origin/main`（无 ahead/behind，rev-list 计数 0）
+- 提交文件: 68baa22 仅含 .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件），无 PDF
+- 备注: 本次执行 porcelain 为空无新更改，但 `git status -sb` 显示 ahead 1，确认 08-30 21:05 的提交 push 未完成。暂存区无 pdf（diff a786a41..68baa22 无 pdf，grep exit=1，`git ls-files '*.pdf'` 计数为 0），`.gitignore` 第 11 行 `*.pdf` 规则经 check-ignore 验证生效。push 过程：①快速失败配置 Operation too slow（16m48s，github.com 连接不稳定第 21 次复现）；②curl 探测主站/api 均 HTTP 200 且连接 <0.3s 正常（主站已恢复）；③HTTP/1.1 + lowSpeedLimit=100/lowSpeedTime=90 一次成功（秒级）。经验保持：先测连通性再 HTTP/1.1 重试有效。本次无用户笔记更改，仅自动化记忆文件自身。循环噪音问题第 79 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
+
+### 2026-08-31 02:52
+- 结果: 工作区 porcelain 为空（无新文件更改）；但本地领先 origin/main 1 个提交（68baa22，08-30 21:05 的 auto-sync，上次执行 commit 后 push 未完成），已补推成功
+- 推送: a786a41..68baa22 main -> main（https://github.com/Lummibunny/study）
+- 提交文件: 68baa22 仅含 .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件），无 PDF
+- 备注: 暂存区无 pdf（`git ls-files '*.pdf'` 计数为 0，diff a786a41..68baa22 无 pdf，grep exit=1），`.gitignore` 第 11 行 `*.pdf` 规则经 check-ignore 验证生效；推送后工作区干净，`git status -sb` 为 `## main...origin/main`（无 ahead/behind，rev-list 计数 0）。push 过程：①快速失败配置 Operation too slow（16m48s，github.com 连接不稳定第 21 次复现）；②curl 探测主站/api 均 HTTP 200 连接 <0.3s 正常；③HTTP/1.1 + lowSpeedLimit=100/lowSpeedTime=90 一次成功。本次无用户笔记更改，仅自动化记忆文件自身。循环噪音问题第 80 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
