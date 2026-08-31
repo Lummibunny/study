@@ -561,3 +561,10 @@
 - 推送: a786a41..68baa22 main -> main（https://github.com/Lummibunny/study）
 - 提交文件: 68baa22 仅含 .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件），无 PDF
 - 备注: 暂存区无 pdf（`git ls-files '*.pdf'` 计数为 0，diff a786a41..68baa22 无 pdf，grep exit=1），`.gitignore` 第 11 行 `*.pdf` 规则经 check-ignore 验证生效；推送后工作区干净，`git status -sb` 为 `## main...origin/main`（无 ahead/behind，rev-list 计数 0）。push 过程：①快速失败配置 Operation too slow（16m48s，github.com 连接不稳定第 21 次复现）；②curl 探测主站/api 均 HTTP 200 连接 <0.3s 正常；③HTTP/1.1 + lowSpeedLimit=100/lowSpeedTime=90 一次成功。本次无用户笔记更改，仅自动化记忆文件自身。循环噪音问题第 80 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
+
+### 2026-08-31 08:26
+- 结果: 有 1 个暂存更改，commit 成功；push 首次因 Operation too slow 失败（快速失败配置，16m14s，github.com 连接不稳定第 22 次复现），curl 探测主站/api 均 HTTP 200 连接 <0.2s 正常，HTTP/1.1 + lowSpeedLimit=100/lowSpeedTime=90 重试一次成功（秒级）
+- 提交: afb7295 "auto-sync: 定时同步 2026-08-31 08:26"
+- 推送: 68baa22..afb7295 main -> main（https://github.com/Lummibunny/study）
+- 提交文件: .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，补推 02:52 记录；13 行新增）
+- 备注: 暂存区无 pdf（grep exit=1 无匹配，`git ls-files '*.pdf'` 计数为 0），`.gitignore` `*.pdf` 规则生效；推送后工作区干净，`git status -sb` 为 `## main...origin/main`（无 ahead/behind，rev-list 计数 0）。本次无用户笔记更改，仅自动化记忆文件自身。push 失败后先 curl 探测（主站/api 均正常）再 HTTP/1.1 重试成功，模式与历史一致。循环噪音问题第 81 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
