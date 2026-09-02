@@ -621,3 +621,10 @@
 - 推送: 39cfc6e..52a19de main -> main（https://github.com/Lummibunny/study）
 - 提交文件: .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，补推 15:23 记录；7 行新增）
 - 备注: 暂存区无 pdf（grep exit=1 无匹配，`git ls-files '*.pdf'` 计数为 0），`.gitignore` `*.pdf` 规则生效；推送后工作区干净，`git status -sb` 为 `## main...origin/main`（无 ahead/behind，rev-list 计数 0），提交范围 39cfc6e..52a19de 无 PDF。本次无用户笔记更改，仅自动化记忆文件自身。循环噪音问题第 89 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
+
+### 2026-09-03 01:52
+- 结果: 有 1 个暂存更改，commit 成功；push 首次因 Operation too slow 失败（快速失败配置，github.com 连接不稳定第 25 次复现），dig + curl --resolve 直连验证主站正常后 HTTP/1.1 重试一次成功
+- 提交: d945804 "auto-sync: 定时同步 2026-09-03 01:52"
+- 推送: 52a19de..d945804 main -> main（https://github.com/Lummibunny/study）
+- 提交文件: .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，补推 09-02 20:26 记录；7 行新增）
+- 备注: 暂存区无 pdf（grep exit=1 无匹配，`git ls-files '*.pdf'` 计数为 0），`.gitignore` `*.pdf` 规则生效；推送后工作区干净，`git status -sb` 为 `## main...origin/main`（无 ahead/behind，rev-list 计数 0），提交范围 52a19de..d945804 无 PDF。本次无用户笔记更改，仅自动化记忆文件自身。push 失败后探测：github.com 主站连接阶段挂起 936s HTTP 000（--max-time 不约束连接阶段，第 N 次验证）、api.github.com 1.27s 正常；dig 确认 DNS 正常（20.205.243.166）且 curl --resolve 直连主站 HTTP 200 仅 1.0s——判定为系统解析临时故障，HTTP/1.1 + lowSpeedLimit=100/lowSpeedTime=90 重试一次成功，模式与 08-26 05:33 / 08-28 05:41 一致。循环噪音问题第 90 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
