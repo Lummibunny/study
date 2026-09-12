@@ -691,3 +691,10 @@
 - 推送: 8282c67..4c8a560 main -> main（https://github.com/Lummibunny/study）
 - 提交文件: 仅 .workbuddy/automations/automation-1786196050094/memory.md（本自动化记忆文件），无用户笔记内容更改
 - 备注: 暂存区无 pdf（`git diff --cached --name-only | grep -i '\.pdf$'` 无匹配），`.gitignore` `*.pdf` 规则生效；本次无用户笔记更改。循环噪音问题第 99 次出现（本记录将在下次执行时被提交），仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
+
+### 2026-09-12 21:43
+- 结果: 有 1 个暂存更改，commit 成功；push 首次因 SSL connection timeout 失败（快速失败配置 5m 内失败，github.com 连接不稳定第 26 次复现），探测确认主站完全不可达后轮询等待恢复，HTTP/1.1 方案重试一次成功（3s）
+- 提交: 0c4683c "auto-sync: 定时同步 2026-09-12 21:43"（1 file changed, 7 insertions）
+- 推送: 4c8a560..0c4683c main -> main（https://github.com/Lummibunny/study）；`git status -sb` 为 `## main...origin/main`（无 ahead/behind，rev-list 计数 0）
+- 提交文件: .workbuddy/automations/automation-1786196050094/memory.md（修改，本自动化记忆文件，补推 16:20 记录）。无用户笔记更改，无 PDF
+- 备注: 暂存区无 pdf（grep exit=1 无匹配），`git ls-files '*.pdf'` 计数为 0，`.gitignore` 第 11 行 `*.pdf` 规则经 check-ignore 验证生效（papers/2024_Gou_*.pdf 被忽略），推送范围 4c8a560..0c4683c 无 PDF；推送后工作区干净，main 与 origin/main 同步。本次过程：①快速失败配置 push → SSL connection timeout（5m 内快速失败，配置有效）；②探测：github.com 主站 HTTP 000 连接阶段挂起 15s，DNS 正常（20.205.243.166），api.github.com HTTP 200/1.17s 正常；③`curl --resolve` 直连 IP 同样 HTTP 000，判定为**主站整体不可达（非 DNS 问题）**；④轮询探测（每 60s，--connect-timeout 10）：第 1 次探测即 HTTP 200，主站恢复极快；⑤HTTP/1.1 + lowSpeedLimit=100/lowSpeedTime=90 推送 3s 成功。经验保持：主站不可达时先 `--connect-timeout` 约束的轮询探测等待恢复，恢复后 HTTP/1.1 重试即可，本次全程约 1 分钟完成。循环噪音问题第 100 次出现，仍强烈建议将 .workbuddy/ 加入 .gitignore 解决
