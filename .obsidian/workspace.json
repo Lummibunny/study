@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "缑迅杰老师近两年论文学习笔记.md",
+                "file": "论文技能学习清单.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "缑迅杰老师近两年论文学习笔记"
+              "title": "论文技能学习清单"
             }
           }
         ]
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "缑迅杰老师近两年论文学习笔记.md",
+                "file": "论文技能学习清单.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "缑迅杰老师近两年论文学习笔记.md",
+                "file": "论文技能学习清单.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "缑迅杰老师近两年论文学习笔记.md",
+                "file": "论文技能学习清单.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -190,12 +190,14 @@
   },
   "active": "f89e887d1f9f36bf",
   "lastOpenFiles": [
+    "研究生论文体系完全指南（川大版）.md",
+    "SQL零基础入门速查.md",
+    "论文开题准备计划-充电桩预约机制.md",
+    "缑迅杰老师近两年论文学习笔记.md",
     "W1_SQL七天刷题计划.md",
     "README.md",
-    "缑迅杰老师近两年论文学习笔记.md",
     "论文技能学习清单.md",
     "2026-08-08.md",
-    "论文开题准备计划-充电桩预约机制.md",
     "香港银行开户全攻略（买美股）.md",
     "未命名.canvas"
   ]
