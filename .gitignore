@@ -10,5 +10,8 @@ index/
 # PDF 一律不入库（体积大，markdown 已入库）
 *.pdf
 
+# WorkBuddy 运行时数据（automation 记忆等，不入库）
+.workbuddy/
+
 # 系统文件
 .DS_Store
