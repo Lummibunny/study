@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "论文技能学习清单.md",
+                "file": "WorkBuddy多端互通配置手册.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "论文技能学习清单"
+              "title": "WorkBuddy多端互通配置手册"
             }
           }
         ]
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "论文技能学习清单.md",
+                "file": "WorkBuddy多端互通配置手册.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "论文技能学习清单.md",
+                "file": "WorkBuddy多端互通配置手册.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "论文技能学习清单.md",
+                "file": "WorkBuddy多端互通配置手册.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -190,6 +190,25 @@
   },
   "active": "f89e887d1f9f36bf",
   "lastOpenFiles": [
+    "文献笔记-充电桩预约/108 TSG2025 菜单机制.md",
+    "文献笔记-充电桩预约/107 TRC2019 CPT行为建模.md",
+    "文献笔记-充电桩预约/106 TITS2024 鲁棒调度.md",
+    "文献笔记-充电桩预约/105 AppliedEnergy 两时间尺度.md",
+    "文献笔记-充电桩预约/104 NatureComms 行为聚类.md",
+    "文献笔记-充电桩预约/103 OJVT综述 建地图.md",
+    "文献笔记-充电桩预约/102 EJOR2026 离线vs在线.md",
+    "文献笔记-充电桩预约/101 TRC2025 预约滚动分配.md",
+    "文献笔记-充电桩预约/000 索引 · 顶刊8篇.md",
+    "文献笔记-充电桩预约",
+    "papers/2025_Mathioudaki_Online_Menu_Based_Scheduling_EV_Charging.pdf",
+    "papers/2019_Hu_Modeling_Charging_Behavior_CPT.pdf",
+    "papers/2024_Sone_Robust_EV_Scheduling_Uncertain_Demands_Deadlines.pdf",
+    "papers/2026_Risk_Aware_Day_Ahead_Baseline_Rolling_Correction.pdf",
+    "papers/2026_Zhang_Behavioral_Uncertainty_EV_Charging_Grid_Load.pdf",
+    "papers/2024_Elghanam_EV_Charging_Scheduling_Optimization_Review.pdf",
+    "papers/2026_Gauchotte_EV_Charging_Scheduling_Offline_Stochastic_Online.pdf",
+    "papers/2025_Zhang_EV_Shared_Charging_Reservation_Rolling_Allocation.pdf",
+    "论文技能学习清单.md",
     "论文系统填报-论文初步设想（充电桩预约）.md",
     "研一发论文时间账（物流工程·充电桩预约）.md",
     "WorkBuddy多端互通配置手册.md",
@@ -200,7 +219,6 @@
     "缑迅杰老师近两年论文学习笔记.md",
     "W1_SQL七天刷题计划.md",
     "README.md",
-    "论文技能学习清单.md",
     "2026-08-08.md",
     "香港银行开户全攻略（买美股）.md",
     "未命名.canvas"
