@@ -11,14 +11,12 @@
             "id": "f89e887d1f9f36bf",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "论文主线 MOC.md",
-                "mode": "source",
-                "source": false
+                "file": "papers/2025_Zhang_EV_Shared_Charging_Reservation_Rolling_Allocation.pdf"
               },
-              "icon": "lucide-file",
-              "title": "论文主线 MOC"
+              "icon": "lucide-file-text",
+              "title": "2025_Zhang_EV_Shared_Charging_Reservation_Rolling_Allocation"
             }
           }
         ]
@@ -99,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "论文主线 MOC.md",
+                "file": "papers/2025_Zhang_EV_Shared_Charging_Reservation_Rolling_Allocation.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "论文主线 MOC.md",
+                "file": "papers/2025_Zhang_EV_Shared_Charging_Reservation_Rolling_Allocation.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "论文主线 MOC.md",
+                "file": "papers/2025_Zhang_EV_Shared_Charging_Reservation_Rolling_Allocation.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -189,9 +187,12 @@
   },
   "active": "f89e887d1f9f36bf",
   "lastOpenFiles": [
-    "研一发论文时间账（物流工程·充电桩预约）.md",
-    "论文主线 MOC.md",
+    "papers/2025_Zhang_EV_Shared_Charging_Reservation_Rolling_Allocation_副本.pdf",
     "文献笔记-充电桩预约/101 TRC2025 预约滚动分配.md",
+    "papers/2025_Zhang_EV_Shared_Charging_Reservation_Rolling_Allocation.pdf",
+    "论文主线 MOC.md",
+    "文献矩阵表.md",
+    "研一发论文时间账（物流工程·充电桩预约）.md",
     "文献笔记-充电桩预约/103 OJVT综述 建地图.md",
     "文献笔记-充电桩预约/000 索引 · 顶刊8篇.md",
     "papers_md/2024_Gou_Circular_Economy_Fuzzy_Set_Theory_p031-038.md",
@@ -199,7 +200,6 @@
     "papers_md/2024_Gou_Circular_Economy_Fuzzy_Set_Theory_p011-020.md",
     "papers/2026_Zhang_Behavioral_Uncertainty_EV_Charging_Grid_Load.pdf",
     "papers/2026_Gauchotte_EV_Charging_Scheduling_Offline_Stochastic_Online.pdf",
-    "papers/2025_Zhang_EV_Shared_Charging_Reservation_Rolling_Allocation.pdf",
     "papers/2024_Gou_Circular_Economy_Fuzzy_Set_Theory.pdf",
     "papers/2024_Elghanam_EV_Charging_Scheduling_Optimization_Review.pdf",
     "papers/2025_Mathioudaki_Online_Menu_Based_Scheduling_EV_Charging.pdf",
@@ -223,8 +223,6 @@
     "缑迅杰老师近两年论文学习笔记.md",
     "W1_SQL七天刷题计划.md",
     "README.md",
-    "2026-08-08.md",
-    "香港银行开户全攻略（买美股）.md",
     "未命名.canvas"
   ]
 }
