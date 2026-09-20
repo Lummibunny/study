@@ -1,3 +1,7 @@
+---
+tags:
+  - 百科
+---
 # WorkBuddy 手机端 ↔ 电脑端互通配置手册
 
 > 目标：手机（App / 小程序）新建的任务与产出的 md，自动落进本机 `~/Documents/study` 资源库，并随既有 automation 推到 GitHub。

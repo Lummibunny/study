@@ -1,4 +1,4 @@
-# 文献精读笔记｜EV 共享充电与停车：考虑用户不准时的预约式动态滚动分配框架
+
 
 > **英文原题**：Electric vehicles shared charging and parking: A reservation-based dynamic rolling allocation framework considering unpunctuality
 > **作者**：Hongyang Zhang, Jinrui Gong, Wei Tang, Zhenyu Mei\*, Chi Feng

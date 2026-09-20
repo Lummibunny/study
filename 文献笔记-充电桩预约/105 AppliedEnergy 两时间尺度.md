@@ -1,20 +1,18 @@
 ---
 type: 文献笔记
-title: "Risk-aware day-ahead baseline scheduling and real-time rolling correction for coupled EV charging and edge-service operation under distribution-network constraints"
+title: Risk-aware day-ahead baseline scheduling and real-time rolling correction for coupled EV charging and edge-service operation under distribution-network constraints
 journal: Applied Energy
 year: 2026
 volume: "426"
 pages: "128600"
 doi: 10.1016/j.apenergy.2026.128600
 pdf: "[[papers/2026_Risk_Aware_Day_Ahead_Baseline_Rolling_Correction.pdf]]"
-direction: [方向③日前+临时, 方向②突发事件]
+direction:
+  - 方向③日前+临时
+  - 方向②突发事件
 priority: 最高（框架直接可抄）
-difficulty: ★★★★★
-status: 未读
 tags:
-  - 论文/文献
-  - 充电桩预约
-  - 必读
+  - 文献笔记
 ---
 
 # ⑤ 日前基线包络 + 实时滚动校正

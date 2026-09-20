@@ -5,17 +5,13 @@ authors: Elghanam E., Abdelfatah A., Hassan M.S., Osman A.H.
 journal: IEEE Open Journal of Vehicular Technology
 year: 2024
 volume: "5"
-pages: 1294-1313
 doi: 10.1109/OJVT.2024.3420244
 pdf: "[[papers/2024_Elghanam_EV_Charging_Scheduling_Optimization_Review.pdf]]"
-direction: [全域]
+direction:
+  - 全域
 priority: 中（工具型，快速读）
-difficulty: ★★
-status: 未读
 tags:
-  - 论文/文献
-  - 综述
-  - 充电桩预约
+  - 文献笔记
 ---
 
 # ③ 领域地图（系统综述）

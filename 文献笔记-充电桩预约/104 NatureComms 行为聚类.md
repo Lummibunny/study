@@ -1,20 +1,17 @@
 ---
 type: 文献笔记
-title: "Behavioral uncertainty in EV charging drives heterogeneous grid load variability under climate goals"
+title: Behavioral uncertainty in EV charging drives heterogeneous grid load variability under climate goals
 authors: Zhang B., Xin Q., Chen S., Wang Z., Lu Y., Niu N., Zhang F., Liu G., Bansal P.
 journal: Nature Communications
 year: 2026
 volume: "17"
 doi: 10.1038/s41467-025-66796-4
 pdf: "[[papers/2026_Zhang_Behavioral_Uncertainty_EV_Charging_Grid_Load.pdf]]"
-direction: [方向①车主行为差异]
+direction:
+  - 方向①车主行为差异
 priority: 高（解决"凭什么这么分类"）
-difficulty: ★★★
-status: 未读
 tags:
-  - 论文/文献
-  - 用户行为
-  - 充电桩预约
+  - 文献笔记
 ---
 
 # ④ 用真实数据聚类出 5 类充电行为
