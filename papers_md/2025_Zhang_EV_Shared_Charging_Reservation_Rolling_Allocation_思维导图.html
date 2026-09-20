@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文献思维导图 | EV 共享充电停车：预约式动态滚动分配框架</title>
+<style>
+  :root{
+    --bg:#F6F8FC; --card:#FFFFFF; --line:#DDE3EE;
+    --text:#1F2937; --muted:#6B7280; --chip:#F1F5F9;
+    --c1:#2563EB; --c2:#0891B2; --c3:#059669; --c4:#65A30D;
+    --c5:#D97706; --c6:#DC2626; --c7:#7C3AED; --c8:#DB2777;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:32px 24px 56px;
+    background:var(--bg); color:var(--text);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1280px; margin:0 auto;}
+  header.top{text-align:center; margin-bottom:26px;}
+  header.top h1{margin:0 0 8px; font-size:20px; letter-spacing:.2px;}
+  header.top p{margin:0; font-size:13px; color:var(--muted); line-height:1.7;}
+  header.top .tag{
+    display:inline-block; margin-top:10px; padding:4px 12px; border-radius:999px;
+    background:#E8EEFB; color:var(--c1); font-size:12px; font-weight:600;
+  }
+  .board{position:relative; display:grid; grid-template-columns:280px 1fr 1fr; gap:34px; align-items:center;}
+  #wires{position:absolute; inset:0; width:100%; height:100%; pointer-events:none; overflow:visible; z-index:0;}
+
+  .root{
+    position:relative; z-index:2; background:linear-gradient(135deg,#2563EB,#1D4ED8);
+    color:#fff; border-radius:16px; padding:22px 20px; text-align:center;
+    box-shadow:0 10px 26px rgba(37,99,235,.28);
+  }
+  .root .rt{font-size:17px; font-weight:700; line-height:1.5;}
+  .root .rs{margin-top:12px; font-size:12px; line-height:1.8; opacity:.92; text-align:left;}
+  .root .rs b{background:rgba(255,255,255,.16); border-radius:4px; padding:1px 5px; font-weight:600;}
+
+  .col{display:flex; flex-direction:column; gap:20px; position:relative; z-index:2;}
+
+  .node{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    box-shadow:0 4px 14px rgba(15,23,42,.06); overflow:hidden;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .node:hover{transform:translateY(-2px); box-shadow:0 10px 22px rgba(15,23,42,.10);}
+  .node .head{
+    display:flex; align-items:center; gap:10px; padding:13px 16px;
+    cursor:pointer; user-select:none; border-left:5px solid var(--ac);
+  }
+  .node .idx{
+    flex:none; width:22px; height:22px; border-radius:7px; background:var(--ac);
+    color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center;
+  }
+  .node .tt{font-size:14.5px; font-weight:700; letter-spacing:.2px;}
+  .node .caret{margin-left:auto; font-size:11px; color:var(--muted); transition:transform .2s;}
+  .node.closed .caret{transform:rotate(-90deg);}
+  .node ul{list-style:none; margin:0; padding:6px 16px 15px 16px; display:flex; flex-direction:column; gap:7px;}
+  .node.closed ul{display:none;}
+  .node li{
+    font-size:12.5px; line-height:1.65; color:#374151;
+    background:var(--chip); border-radius:8px; padding:7px 11px;
+    border-left:3px solid color-mix(in srgb, var(--ac) 45%, #fff);
+  }
+  .node li b{color:#111827; font-weight:600;}
+  .node li em{font-style:normal; color:var(--ac); font-weight:700;}
+
+  .legend{
+    margin-top:30px; display:flex; flex-wrap:wrap; gap:10px 18px; justify-content:center;
+    font-size:12px; color:var(--muted);
+  }
+  .legend span{display:inline-flex; align-items:center; gap:6px;}
+  .legend i{width:10px; height:10px; border-radius:3px; display:inline-block;}
+  .foot{margin-top:14px; text-align:center; font-size:11.5px; color:#9CA3AF;}
+
+  @media (max-width:1000px){
+    .board{grid-template-columns:1fr;}
+    #wires{display:none;}
+    .root{max-width:520px; margin:0 auto;}
+    .col{gap:14px;}
+  }
+  @media print{ body{background:#fff;} .node:hover{transform:none;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>EV 共享充电与停车：考虑用户不准时的预约式动态滚动分配框架</h1>
+    <p>Zhang et al., <i>Transportation Research Part C</i>, Vol.179 (2025), 105259 · 浙江大学 · Elsevier</p>
+    <div class="tag">点击分支标题可折叠／展开子节点</div>
+  </header>
+
+  <div class="board" id="board">
+    <svg id="wires"></svg>
+
+    <div class="root">
+      <div class="rt">预约式动态滚动分配框架<br>（混合停车场）</div>
+      <div class="rs">
+        <b>场景</b> 普通位 + 快充位 + 慢充位<br>
+        <b>动作</b> 预约 + 15min 决策间隔滚动排位<br>
+        <b>创新</b> 充电位共享给纯停车用户<br>
+        <b>难点</b> 用户不准时 → 排班冲突<br>
+        <b>求解</b> MIP + Gurobi，15min 内出解
+      </div>
+    </div>
+
+    <div class="col" id="colA">
+      <div class="node" style="--ac:var(--c1)">
+        <div class="head"><span class="idx">1</span><span class="tt">研究主题</span><span class="caret">▾</span></div>
+        <ul>
+          <li>一句话：<b>混合停车场里同时调度停车与充电需求</b>，靠预约 + 滚动分配 + 充电位共享提高收入与利用率</li>
+          <li>混合停车场 = 普通车位 + 快充位 + 慢充位共存（hybrid parking lot）</li>
+          <li>核心矛盾：<em>充电位闲时空转 vs 普通车位不够用</em></li>
+          <li>核心风险：用户早到／晚走 → 相邻用户抢同一车位</li>
+        </ul>
+      </div>
+
+      <div class="node" style="--ac:var(--c2)">
+        <div class="head"><span class="idx">2</span><span class="tt">研究背景与动机</span><span class="caret">▾</span></div>
+        <ul>
+          <li><b>车多桩少</b>：EV 增速 &gt; 充电设施增速，找桩难抑制推广</li>
+          <li><b>位被霸占</b>：充满不走 + EV 免费停车政策 → 超时占用</li>
+          <li><b>时空不均</b>：热门站挤爆、冷门站闲置；峰谷差异大</li>
+          <li><b>政策副作用</b>：深圳 30%、杭州 15% 车位须配建充电 → 停车更难</li>
+          <li>已有三条路线：抑制需求 / 增加供给（共享）/ 实时引导</li>
+        </ul>
+      </div>
+
+      <div class="node" style="--ac:var(--c3)">
+        <div class="head"><span class="idx">3</span><span class="tt">两个研究空白（Gap）</span><span class="caret">▾</span></div>
+        <ul>
+          <li><b>Q1</b>：以往只做「纯停车预约」或「纯充电预约」，<em>混合停车场一体化分配</em>几乎没人做</li>
+          <li><b>Q2</b>：用户<em>不准时</em>会让依赖精确时刻表的预约系统失效，缺鲁棒框架</li>
+          <li>作者原创性①：首次同时刻画停车用户与充电用户的时间偏差</li>
+          <li>作者原创性②：从「静态提前一天预订」走向<em>动态在线</em>实时重排</li>
+        </ul>
+      </div>
+
+      <div class="node" style="--ac:var(--c4)">
+        <div class="head"><span class="idx">4</span><span class="tt">研究目的与四条贡献</span><span class="caret">▾</span></div>
+        <ul>
+          <li><b>目的</b>：最大化净收入（总收入 − 冲突成本）+ 最小化总出行时间</li>
+          <li>① 一体化动态分配框架 + <em>充电位共享机制</em>（仿真验证）</li>
+          <li>② <em>两阶段（先充电后停车）+ 动态滚动算法</em></li>
+          <li>③ 不准时建模 → 最大冲突概率 ρmax → 反推<em>时间缓冲</em>（鲁棒）</li>
+          <li>④ 杭州 <b>1400+ 停车场 / 3000 万条</b>记录 + 4 万条快充记录标定</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col" id="colB">
+      <div class="node" style="--ac:var(--c5)">
+        <div class="head"><span class="idx">5</span><span class="tt">方法①：模型体系与基线</span><span class="caret">▾</span></div>
+        <ul>
+          <li>四大基线：<b>FCFS</b>（到场抢位）／<b>FBFS</b>（先订先得，贪心）／<b>DA</b>（间隔内统一优化）／<b>SO</b>（提前一天全局最优＝理论上界）</li>
+          <li>主模型 <em>D-DRA</em>：确定性动态滚动分配</li>
+          <li>「滚动」= 可调请求在 I<sub>i+1</sub> ~ I<sub>i+g−2</sub> 可被<em>反复重排</em>，腾位给新请求</li>
+          <li>目标：<em>max 收入 − 拒绝惩罚 − 出行成本</em>（三目标加权，权重均取 1）</li>
+          <li>决策间隔 ΔI = 15min → 一天 96 个间隔</li>
+        </ul>
+      </div>
+
+      <div class="node" style="--ac:var(--c6)">
+        <div class="head"><span class="idx">6</span><span class="tt">方法②：共享机制 + 两阶段</span><span class="caret">▾</span></div>
+        <ul>
+          <li><b>CASE 0</b> 不共享（基准）｜<b>CASE 1</b> 完全共享</li>
+          <li><b>CASE 2</b> 时长限制：停车时长 &lt; β（450min）才可占用充电位</li>
+          <li><b>CASE 3</b> 时间窗限制：到达落在 6–9 点或 14–17 点</li>
+          <li><b>CASE 4</b> 时长—类型匹配：短停→慢充位，长停→快充位（δ=90min）</li>
+          <li><em>两阶段 charge-first-park-second</em>：先满足充电需求，剩余充电位才给停车</li>
+        </ul>
+      </div>
+
+      <div class="node" style="--ac:var(--c7)">
+        <div class="head"><span class="idx">7</span><span class="tt">方法③：鲁棒模型 R-DRA</span><span class="caret">▾</span></div>
+        <ul>
+          <li>两类冲突：<b>LL 晚走</b>（前车不走）、<b>EA 早到</b>（后车干等）</li>
+          <li>到达／离开时间 ~ <em>异质正态分布</em>（假设分布已知）</li>
+          <li>约束：Pr(A<sub>m</sub> ≤ L<sub>m′</sub>) ≤ ρmax ⟹ μ<sub>D</sub> &gt; σ<sub>D</sub>·Φ⁻¹(ρmax)</li>
+          <li>ρmax = 0.1 ⟹ 平均缓冲 ≈ <em>15 分钟</em></li>
+          <li>三种实现：<b>O</b> 原始（最慢）／<b>R</b> 削减冗余约束（综合最优）／<b>N</b> 预加缓冲后跑 D-DRA（冲突最少、最快）</li>
+        </ul>
+      </div>
+
+      <div class="node" style="--ac:var(--c8)">
+        <div class="head"><span class="idx">8</span><span class="tt">实验、结论与讨论</span><span class="caret">▾</span></div>
+        <ul>
+          <li>场景：4 个停车场 / 100 车位（普 50·快 40·慢 10）/ 需求 200–600</li>
+          <li>小算例：<em>R-DRA 净收入最高 1486.2</em>，成功服务率 <b>0.90</b>（FBFS 仅 0.74）</li>
+          <li>共享机制 uniformly 提升收入与利用率：CASE1/4 利 CSU，CASE2 利 SSR</li>
+          <li>需求 &gt; 350 后 D-DRA 收入碾压 FBFS；<em>接受率高 ≠ 收入高</em></li>
+          <li>缓冲<em>倒 U 型</em>：低压力最优 20min，高压力最优 15min</li>
+          <li>局限：未做<b>预约取消</b>、未做<b>建设成本/容量规划</b>、分布未预测</li>
+          <li>未来：用 <em>深度强化学习 DRL</em> 处理序贯决策</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span><i style="background:var(--c1)"></i>主题</span>
+    <span><i style="background:var(--c2)"></i>背景</span>
+    <span><i style="background:var(--c3)"></i>空白</span>
+    <span><i style="background:var(--c4)"></i>贡献</span>
+    <span><i style="background:var(--c5)"></i>模型体系</span>
+    <span><i style="background:var(--c6)"></i>共享机制</span>
+    <span><i style="background:var(--c7)"></i>鲁棒优化</span>
+    <span><i style="background:var(--c8)"></i>结论讨论</span>
+  </div>
+  <div class="foot">CSU＝充电位利用率 · SSR＝成功服务率 · D-DRA＝确定性滚动分配 · R-DRA＝鲁棒滚动分配</div>
+</div>
+
+<script>
+(function(){
+  var board = document.getElementById('board');
+  var svg   = document.getElementById('wires');
+  var root  = board.querySelector('.root');
+  var nodes = Array.prototype.slice.call(board.querySelectorAll('.node'));
+  var COLORS = ['#2563EB','#0891B2','#059669','#65A30D','#D97706','#DC2626','#7C3AED','#DB2777'];
+
+  function draw(){
+    if (window.innerWidth <= 1000){ svg.innerHTML=''; return; }
+    var b = board.getBoundingClientRect();
+    var r = root.getBoundingClientRect();
+    var x0 = r.right - b.left, y0 = r.top - b.top + r.height/2;
+    var out = '';
+    nodes.forEach(function(n,i){
+      var c = n.getBoundingClientRect();
+      var x1 = c.left - b.left, y1 = c.top - b.top + Math.min(26, c.height/2);
+      var dx = Math.max(40, (x1 - x0) * 0.5);
+      var col = COLORS[i % COLORS.length];
+      out += '<path d="M '+x0+' '+y0+' C '+(x0+dx)+' '+y0+', '+(x1-dx)+' '+y1+', '+x1+' '+y1+'" '
+           + 'fill="none" stroke="'+col+'" stroke-width="1.8" stroke-opacity="0.45" stroke-linecap="round"/>';
+      out += '<circle cx="'+x1+'" cy="'+y1+'" r="3.5" fill="'+col+'" fill-opacity="0.9"/>';
+    });
+    svg.setAttribute('viewBox','0 0 '+b.width+' '+b.height);
+    svg.innerHTML = out;
+  }
+
+  nodes.forEach(function(n){
+    n.querySelector('.head').addEventListener('click', function(){
+      n.classList.toggle('closed');
+      setTimeout(draw, 210);
+    });
+  });
+
+  window.addEventListener('resize', draw);
+  window.addEventListener('load', draw);
+  draw();
+})();
+</script>
+</body>
+</html>
