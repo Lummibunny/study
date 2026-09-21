@@ -1,6 +1,7 @@
 
 
 > **英文原题**：Electric vehicles shared charging and parking: A reservation-based dynamic rolling allocation framework considering unpunctuality
+> [101 TRC2025 预约滚动分配]
 > **作者**：Hongyang Zhang, Jinrui Gong, Wei Tang, Zhenyu Mei\*, Chi Feng
 > **单位**：浙江大学智能交通系统研究所；浙江大学 Polytechnic Institute；衢州学院机械工程学院
 > **期刊**：Transportation Research Part C: Emerging Technologies, Vol.179 (2025), 105259（Elsevier，交通领域顶刊，SCI 一区）
@@ -9,9 +10,9 @@
 
 ---
 
-## 一、研究主题（一句话）
+## 一、研究主题
 
-在**混合停车场**（普通停车位 + 快充位 + 慢充位共存）里，用一套**"预约 + 动态滚动分配 + 充电位共享"**的调度框架，同时管好停车需求和充电需求，目标是**提高停车场总收入、提高充电位利用率，并压低用户因"不准时"导致的排班冲突**。
+在**混合停车场**（普通停车位 + 快充位 + 慢充位共存）里，用一套**"预约 + 动态滚动分配 + 充电位共享"**的调度框架，同时管好停车需求和充电需求，目标是**提高停车场总收入、提高充电位利用率，并压低用户因"不准时"导致的排班冲突。
 
 一句话拆开：
 - **场景**：混合停车场（hybrid parking lot）——不是纯停车场，也不是纯充电站。

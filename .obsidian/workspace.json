@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "文献笔记-充电桩预约/101 TRC2025 预约滚动分配.md",
+                "file": "EV 共享充电与停车：考虑用户不准时的预约式动态滚动分配框架｜文献精读笔记.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "101 TRC2025 预约滚动分配"
+              "title": "EV 共享充电与停车：考虑用户不准时的预约式动态滚动分配框架｜文献精读笔记"
             }
           }
         ],
@@ -100,7 +100,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "文献笔记-充电桩预约/101 TRC2025 预约滚动分配.md",
+                "file": "EV 共享充电与停车：考虑用户不准时的预约式动态滚动分配框架｜文献精读笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "文献笔记-充电桩预约/101 TRC2025 预约滚动分配.md",
+                "file": "EV 共享充电与停车：考虑用户不准时的预约式动态滚动分配框架｜文献精读笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -162,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "文献笔记-充电桩预约/101 TRC2025 预约滚动分配.md",
+                "file": "EV 共享充电与停车：考虑用户不准时的预约式动态滚动分配框架｜文献精读笔记.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -191,11 +191,12 @@
   },
   "active": "f89e887d1f9f36bf",
   "lastOpenFiles": [
+    "[101 TRC2025 预约滚动分配.md",
     "EV 共享充电与停车：考虑用户不准时的预约式动态滚动分配框架｜文献精读笔记.md",
-    "文献笔记-充电桩预约/101 TRC2025 预约滚动分配.md",
-    "papers_md/EV 共享充电与停车：考虑用户不准时的预约式动态滚动分配框架｜文献精读笔记.md",
-    "文献笔记-充电桩预约/000 索引 · 顶刊8篇.md",
     "papers/101 TRC2025 预约滚动分配.pdf",
+    "文献笔记-充电桩预约/101 TRC2025 预约滚动分配.md",
+    "文献笔记-充电桩预约/000 索引 · 顶刊8篇.md",
+    "papers_md/EV 共享充电与停车：考虑用户不准时的预约式动态滚动分配框架｜文献精读笔记.md",
     "scripts/论文主线 MOC.md",
     "papers/2025_Mathioudaki_Online_Menu_Based_Scheduling_EV_Charging.pdf",
     "文献笔记-充电桩预约/108 TSG2025 菜单机制.md",
@@ -226,8 +227,6 @@
     "文献笔记-充电桩预约/103 OJVT综述 建地图.md",
     "papers_md/2024_Gou_Circular_Economy_Fuzzy_Set_Theory_p031-038.md",
     "papers_md/2024_Gou_Circular_Economy_Fuzzy_Set_Theory_p021-030.md",
-    "papers_md/2024_Gou_Circular_Economy_Fuzzy_Set_Theory_p011-020.md",
-    "papers_md/2024_Gou_Circular_Economy_Fuzzy_Set_Theory_p001-010.md",
     "未命名.canvas"
   ]
 }
