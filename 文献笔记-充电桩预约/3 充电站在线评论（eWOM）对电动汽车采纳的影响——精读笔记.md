@@ -1,15 +1,12 @@
-# 文献精读笔记｜充电站在线评论（eWOM）对电动汽车采纳的影响
-
-> **英文原题**：The impact of charging station's eWOM on the electric vehicle adoption
-> **作者**：Shengnan Lv（吕胜男）a,b，Weidong Gan（甘卫东）a，Kee-hung Lai（黎基雄）b,\*，Zeshui Xu（徐泽水）a,\*
-> **单位**：
-> a **四川大学商学院**（成都）
-> b 香港理工大学商学院（Faculty of Business, The Hong Kong Polytechnic University）
-> **期刊**：PDF 中未标注期刊与卷期；由 Word（Microsoft 365）生成，创建时间 2025-11-14，正文内残留作者/审稿批注（如"为什么不是2024？"），**推断为投稿修改稿或工作论文**
-> **关键词**：Charging station；Electric vehicle；Electronic word-of-mouth；Charging service attribute
-
-> ⚠️ **注意**：本文与你的背景高度相关——第一作者单位就是**川大商学院**，通讯作者是**徐泽水**（决策理论 / 模糊决策领域的顶级学者，也是你导师缑迅杰老师所在学术圈的近邻）。这篇几乎就是"川大商学院充电桩方向自己人写的论文"。
-
+---
+title: The impact of charging station's eWOM on the electric vehicle adoption
+authors: 吕胜男，甘卫东，黎基雄，徐泽水
+time: 2026.9.23，还未精读
+pdf: "[[4f859c4621070addbf28f55c6dcb1138.pdf]]"
+关键词: Charging station；Electric vehicle；Electronic word-of-mouth；Charging service attribute
+key: 川大商学院方向自己人的论文
+tags:
+  - 文献笔记
 ---
 
 ## 一、研究主题（一句话）
