@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文献思维导图 | 充电站在线评论（eWOM）对电动汽车采纳的影响</title>
+<style>
+  :root{
+    --bg:#F6F8FC; --card:#FFFFFF; --line:#DDE3EE;
+    --text:#1F2937; --muted:#6B7280; --chip:#F1F5F9;
+    --c1:#2563EB; --c2:#0891B2; --c3:#059669; --c4:#65A30D;
+    --c5:#D97706; --c6:#DC2626; --c7:#7C3AED; --c8:#DB2777;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:32px 24px 56px;
+    background:var(--bg); color:var(--text);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1280px; margin:0 auto;}
+  header.top{text-align:center; margin-bottom:26px;}
+  header.top h1{margin:0 0 8px; font-size:20px; letter-spacing:.2px;}
+  header.top p{margin:0; font-size:13px; color:var(--muted); line-height:1.7;}
+  header.top .tag{
+    display:inline-block; margin-top:10px; padding:4px 12px; border-radius:999px;
+    background:#E8EEFB; color:var(--c1); font-size:12px; font-weight:600;
+  }
+  header.top .tag.warn{background:#FEF3C7; color:#92400E; margin-left:8px;}
+  .board{position:relative; display:grid; grid-template-columns:280px 1fr 1fr; gap:34px; align-items:center;}
+  #wires{position:absolute; inset:0; width:100%; height:100%; pointer-events:none; overflow:visible; z-index:0;}
+
+  .root{
+    position:relative; z-index:2; background:linear-gradient(135deg,#2563EB,#1D4ED8);
+    color:#fff; border-radius:16px; padding:22px 20px; text-align:center;
+    box-shadow:0 10px 26px rgba(37,99,235,.28);
+  }
+  .root .rt{font-size:17px; font-weight:700; line-height:1.5;}
+  .root .rs{margin-top:12px; font-size:12px; line-height:1.8; opacity:.92; text-align:left;}
+  .root .rs b{background:rgba(255,255,255,.16); border-radius:4px; padding:1px 5px; font-weight:600;}
+
+  .col{display:flex; flex-direction:column; gap:20px; position:relative; z-index:2;}
+
+  .node{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    box-shadow:0 4px 14px rgba(15,23,42,.06); overflow:hidden;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .node:hover{transform:translateY(-2px); box-shadow:0 10px 22px rgba(15,23,42,.10);}
+  .node .head{
+    display:flex; align-items:center; gap:10px; padding:13px 16px;
+    cursor:pointer; user-select:none; border-left:5px solid var(--ac);
+  }
+  .node .idx{
+    flex:none; width:22px; height:22px; border-radius:7px; background:var(--ac);
+    color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center;
+  }
+  .node .tt{font-size:14.5px; font-weight:700; letter-spacing:.2px;}
+  .node .caret{margin-left:auto; font-size:11px; color:var(--muted); transition:transform .2s;}
+  .node.closed .caret{transform:rotate(-90deg);}
+  .node ul{list-style:none; margin:0; padding:6px 16px 15px 16px; display:flex; flex-direction:column; gap:7px;}
+  .node.closed ul{display:none;}
+  .node li{
+    font-size:12.5px; line-height:1.65; color:#374151;
+    background:var(--chip); border-radius:8px; padding:7px 11px;
+    border-left:3px solid color-mix(in srgb, var(--ac) 45%, #fff);
+  }
+  .node li b{color:#111827; font-weight:600;}
+  .node li em{font-style:normal; color:var(--ac); font-weight:700;}
+
+  .legend{
+    margin-top:30px; display:flex; flex-wrap:wrap; gap:10px 18px; justify-content:center;
+    font-size:12px; color:var(--muted);
+  }
+  .legend span{display:inline-flex; align-items:center; gap:6px;}
+  .legend i{width:10px; height:10px; border-radius:3px; display:inline-block;}
+  .foot{margin-top:14px; text-align:center; font-size:11.5px; color:#9CA3AF;}
+
+  @media (max-width:1000px){
+    .board{grid-template-columns:1fr;}
+    #wires{display:none;}
+    .root{max-width:520px; margin:0 auto;}
+    .col{gap:14px;}
+  }
+  @media print{ body{background:#fff;} .node:hover{transform:none;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>充电站在线评论（eWOM）对电动汽车采纳的影响</h1>
+    <p>Lv, Gan, Lai, Xu · <b>四川大学商学院</b> + 香港理工大学 · 2025 年工作稿（Word 版，含批注）</p>
+    <div class="tag">点击分支标题可折叠／展开子节点</div>
+  </header>
+
+  <div class="board" id="board">
+    <svg id="wires"></svg>
+
+    <div class="root">
+      <div class="rt">充电站 eWOM<br>→ EV 采纳</div>
+      <div class="rs">
+        <b>数据</b> PlugShare 25.4 万条评论<br>
+        <b>范围</b> 美国 48 州 + DC，2019–2023<br>
+        <b>因变量</b> EV 注册率（245 观测）<br>
+        <b>自变量</b> 效价 valence / 密度 density<br>
+        <b>方法</b> 两阶段 LDA + SAR 空间模型
+      </div>
+    </div>
+
+    <div class="col" id="colA">
+      <div class="node" style="--ac:var(--c1)">
+        <div class="head"><span class="idx">1</span><span class="tt">研究主题</span><span class="caret">▾</span></div>
+        <ul>
+          <li>一句话：<b>用充电站口碑（eWOM）解释美国各州 EV 注册率的差异</b>，并看它的空间溢出</li>
+          <li>视角创新：别人看充电桩的<em>数量、分布、功率</em>，本文看的是<em>用户对充电服务的评价</em></li>
+          <li>两个核心自变量：<b>valence 效价</b>（情感正负）与 <b>density 密度</b>（每端口评论数）</li>
+          <li>反直觉发现：效价越高越好，<em>密度越高反而越糟</em></li>
+        </ul>
+      </div>
+
+      <div class="node" style="--ac:var(--c2)">
+        <div class="head"><span class="idx">2</span><span class="tt">研究背景与动机</span><span class="caret">▾</span></div>
+        <ul>
+          <li>2023 年全球 EV 销量近 <b>1400 万辆</b>，同比 +35%（IEA）</li>
+          <li>充电设施是 EV 的<em>互补品</em>，直接影响续航信心，破解"鸡生蛋"困局</li>
+          <li>EV 是<em>高卷入度商品</em>，买家风险高 → 大量依赖在线评论做决策</li>
+          <li>既有研究：挪威/德国/欧盟/中国 88 城/美国各州，方法以面板、Logit、GWR 为主</li>
+        </ul>
+      </div>
+
+      <div class="node" style="--ac:var(--c3)">
+        <div class="head"><span class="idx">3</span><span class="tt">三个研究空白（Gap）</span><span class="caret">▾</span></div>
+        <ul>
+          <li><b>空白 1</b>：<em>充电站 eWOM 被完全忽略</em>——没人研究口碑如何影响 EV 扩散</li>
+          <li><b>空白 2</b>：只验证了充电速度/设施/时长少数属性，其余属性影响不清楚</li>
+          <li><b>空白 3</b>：忽视<em>空间依赖</em>——一地扩散会带动邻地，评论也跨区传播</li>
+          <li>对应三问：Q1 有哪些属性？Q2 效价/密度如何影响+溢出？Q3 属性间差异？</li>
+        </ul>
+      </div>
+
+      <div class="node" style="--ac:var(--c4)">
+        <div class="head"><span class="idx">4</span><span class="tt">数据</span><span class="caret">▾</span></div>
+        <ul>
+          <li><b>因变量</b>：EV 注册率 = EV 注册数 / 轻型车注册总数，美国能源部</li>
+          <li><b>样本</b>：48 州 + 华盛顿特区 × 5 年 = <em>245 个观测</em>（剔除阿拉斯加、夏威夷）</li>
+          <li><b>评论来源</b>：PlugShare 爬取 44.99 万条签到 → 清洗后 <em>25.46 万条</em>文本评论</li>
+          <li><b>density 定义</b>：每个公共充电端口平均收到的评论条数</li>
+          <li><b>控制变量</b>：充电端口密度、汽油价、本科学历占比、65 岁占比、HDD；VIF 均 &lt; 2.5</li>
+          <li>2% / 98% 分位<em>缩尾</em>处理</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col" id="colB">
+      <div class="node" style="--ac:var(--c5)">
+        <div class="head"><span class="idx">5</span><span class="tt">方法①：两阶段 LDA + 情感分析</span><span class="caret">▾</span></div>
+        <ul>
+          <li>Step 0：用<em>余弦距离最小 + JS 散度最大</em>自动定主题数 = <b>5</b>（不人工调参）</li>
+          <li>Step 1：VEM 算法估普通 LDA，从中挑<em>种子词</em></li>
+          <li>Step 2：用 <em>Seeded Sequential LDA</em>（半监督）出最终主题，可解释性更强</li>
+          <li>情感打分：R 的 <b>sentimentr</b>，支持否定词/强化词/自定义词典</li>
+          <li>关键细节：充电场景里 "ice" 指<em>油车占位</em>而非结冰，必须自定义词典</li>
+          <li>按主题文档频次<em>客观加权</em>得到总体效价</li>
+        </ul>
+      </div>
+
+      <div class="node" style="--ac:var(--c6)">
+        <div class="head"><span class="idx">6</span><span class="tt">方法②：空间计量 SAR</span><span class="caret">▾</span></div>
+        <ul>
+          <li>全局 Moran's I：0.348 → <b>0.460</b>（逐年上升，p=0.000）→ 存在<em>空间集聚</em></li>
+          <li>LM 检验：LM-lag 10.098(p=0.001)、Robust LM-lag 6.629(p=0.010) → <em>选 SAR</em></li>
+          <li>模型：Y = ρWY + αX + 个体效应 + 时间效应 + ε（双向固定效应）</li>
+          <li>空间权重 W：<em>地理邻接</em>（相邻=1，行标准化）；R 的 splm 包估计</li>
+          <li>优势：可把总效应<em>分解为直接效应与间接（溢出）效应</em></li>
+          <li>AIC：SAR −272.211 优于 OLS −261.239</li>
+        </ul>
+      </div>
+
+      <div class="node" style="--ac:var(--c7)">
+        <div class="head"><span class="idx">7</span><span class="tt">核心结果</span><span class="caret">▾</span></div>
+        <ul>
+          <li>五属性：<b>Facility / Interaction / Location / Park / Cost</b></li>
+          <li><b>Cost</b> 密度与效价<em>双最高</em>；<b>Facility</b> 密度高但效价<em>最低</em>（3.715）→ IPA「重点改进区」</li>
+          <li><b>Interaction</b> 密度与效价<em>增长最快</em>；Park 增长最慢</li>
+          <li>ρ = <b>0.251***</b>：本州每增 1 单位，带动邻州 0.25</li>
+          <li>valence：直接 <b>+0.094**</b>、间接 +0.032、总 <b>+0.126**</b></li>
+          <li>density：直接 <b>−0.123***</b>、间接 −0.041、总 <b>−0.164***</b></li>
+          <li>属性层面：<em>Cost +0.162***</em>、Location +0.111** 最强；<em>Interaction 不显著</em></li>
+          <li>稳健性四组全部通过（kNN 权重 / 滞后一期 / 换因变量 / 换自变量）</li>
+        </ul>
+      </div>
+
+      <div class="node" style="--ac:var(--c8)">
+        <div class="head"><span class="idx">8</span><span class="tt">讨论、结论与机会</span><span class="caret">▾</span></div>
+        <ul>
+          <li>密度为负的两条解释：<em>负面偏差</em>（negativity bias）+ <em>信息过载</em></li>
+          <li>Interaction 不显著 → <b>Kano 三因子理论</b>：它是<em>基本属性</em>，没做好强不满，做好了不加分</li>
+          <li>漂亮结论：偏好在<em>买车前 / 买车后发生转移</em>——运营商重 Facility，车企重 Interaction</li>
+          <li>贡献三条：引入 CS eWOM / 空间溢出视角 / 属性细粒度差异</li>
+          <li>局限：仅美国市场、数据<em>主观</em>（建议用故障率、客服响应时间等客观数据验证）</li>
+          <li>你的机会：<em>中国数据做中美对比</em>；把预约机制作为干预变量做 DID；接前景理论 CPT</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span><i style="background:var(--c1)"></i>主题</span>
+    <span><i style="background:var(--c2)"></i>背景</span>
+    <span><i style="background:var(--c3)"></i>空白</span>
+    <span><i style="background:var(--c4)"></i>数据</span>
+    <span><i style="background:var(--c5)"></i>文本挖掘</span>
+    <span><i style="background:var(--c6)"></i>空间计量</span>
+    <span><i style="background:var(--c7)"></i>结果</span>
+    <span><i style="background:var(--c8)"></i>讨论</span>
+  </div>
+  <div class="foot">valence＝评论情感效价 · density＝评论密度 · SAR＝空间自回归模型 · LDA＝主题模型 · IPA＝重要性—绩效分析</div>
+</div>
+
+<script>
+(function(){
+  var board = document.getElementById('board');
+  var svg   = document.getElementById('wires');
+  var root  = board.querySelector('.root');
+  var nodes = Array.prototype.slice.call(board.querySelectorAll('.node'));
+  var COLORS = ['#2563EB','#0891B2','#059669','#65A30D','#D97706','#DC2626','#7C3AED','#DB2777'];
+
+  function draw(){
+    if (window.innerWidth <= 1000){ svg.innerHTML=''; return; }
+    var b = board.getBoundingClientRect();
+    var r = root.getBoundingClientRect();
+    var x0 = r.right - b.left, y0 = r.top - b.top + r.height/2;
+    var out = '';
+    nodes.forEach(function(n,i){
+      var c = n.getBoundingClientRect();
+      var x1 = c.left - b.left, y1 = c.top - b.top + Math.min(26, c.height/2);
+      var dx = Math.max(40, (x1 - x0) * 0.5);
+      var col = COLORS[i % COLORS.length];
+      out += '<path d="M '+x0+' '+y0+' C '+(x0+dx)+' '+y0+', '+(x1-dx)+' '+y1+', '+x1+' '+y1+'" '
+           + 'fill="none" stroke="'+col+'" stroke-width="1.8" stroke-opacity="0.45" stroke-linecap="round"/>';
+      out += '<circle cx="'+x1+'" cy="'+y1+'" r="3.5" fill="'+col+'" fill-opacity="0.9"/>';
+    });
+    svg.setAttribute('viewBox','0 0 '+b.width+' '+b.height);
+    svg.innerHTML = out;
+  }
+
+  nodes.forEach(function(n){
+    n.querySelector('.head').addEventListener('click', function(){
+      n.classList.toggle('closed');
+      setTimeout(draw, 210);
+    });
+  });
+
+  window.addEventListener('resize', draw);
+  window.addEventListener('load', draw);
+  draw();
+})();
+</script>
+</body>
+</html>
