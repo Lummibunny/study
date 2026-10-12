@@ -2,7 +2,7 @@
 title: The impact of charging station's eWOM on the electric vehicle adoption
 authors: 吕胜男，甘卫东，黎基雄，徐泽水
 time: 2026.9.23，
-pdf: "[[4f859c4621070addbf28f55c6dcb1138.pdf]]"
+pdf: "[[2充电站在线评论（eWOM）对电动汽车采纳的影响.pdf]]"
 关键词: Charging station；Electric vehicle；Electronic word-of-mouth；Charging service attribute
 key: 川大商学院方向自己人的论文
 tags:
