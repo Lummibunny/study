@@ -33,5 +33,15 @@ FROM employees RIGHT JOIN buildings  -- 保留 buildings 全部
 1、`GROUP BY` 数据分组语法可以按某个col_name对数据进行分组，
 - ·如：`GROUP BY Year`指对数据按年份分组， 相同年份的分到一个组里。如果把统计函数和`GROUP BY`结合，那统计结果就是对分组内的数据统计了.  
 - `GROUP BY` 分组结果的数据条数，就是分组数量，比如：`GROUP BY Year`，全部数据里有几年，就返回几条数据， 不管是否应用了统计函数.
-2、![[Pasted image 20260921121823.png]]3、
+2、![[Pasted image 20260921121823.png]]3、case when 就是sql里的if else
+eg：
+CASE WHEN building IS NULL THEN 0 ELSE 1 END
+building是空的标0，不是空的就标1
+==CASE==
+  ==WHEN 条件 THEN 结果1==
+  ==ELSE 结果2==
+==END==
+4、时间函数
+![[Pasted image 20261012204615.png]]
+5、其
 

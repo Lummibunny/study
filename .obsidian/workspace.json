@@ -11,12 +11,14 @@
             "id": "c8e85c3d866385d5",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "papers/559d958fa860348a2152d6a4303f6324.pdf"
+                "file": "文献笔记-充电桩预约/9考虑风险的日前基准调度与实时滚动校正，用于配电网约束下的电动汽车充电与边缘服务协同运行——笔记.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "559d958fa860348a2152d6a4303f6324"
+              "icon": "lucide-file",
+              "title": "9考虑风险的日前基准调度与实时滚动校正，用于配电网约束下的电动汽车充电与边缘服务协同运行——笔记"
             }
           }
         ],
@@ -98,7 +100,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "papers/559d958fa860348a2152d6a4303f6324.pdf",
+                "file": "文献笔记-充电桩预约/9考虑风险的日前基准调度与实时滚动校正，用于配电网约束下的电动汽车充电与边缘服务协同运行——笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -188,6 +190,18 @@
   },
   "active": "c8e85c3d866385d5",
   "lastOpenFiles": [
+    "SQL相关/SQL错题集.md",
+    "Pasted image 20261012204615.png",
+    "文献笔记-充电桩预约/9考虑风险的日前基准调度与实时滚动校正，用于配电网约束下的电动汽车充电与边缘服务协同运行——笔记.md",
+    "papers/9考虑风险的日前基准调度与实时滚动校正，用于配电网约束下的电动汽车充电与边缘服务协同运行.pdf",
+    "papers/559d958fa860348a2152d6a4303f6324.pdf",
+    "文献笔记-充电桩预约/8电动汽车充电行为的不确定性导致电网负荷在气候目标下呈现异质性变化——笔记.md",
+    "papers/8电动汽车充电行为的不确定性导致电网负荷在气候目标下呈现异质性变化.pdf",
+    "文献笔记-充电桩预约/7电动汽车充电调度、路径规划与时空需求协调中的优化技术：系统综述——笔记.md",
+    "papers/7电动汽车充电调度、路径规划与时空需求协调中的优化技术：系统综述.pdf",
+    "papers/2024_Gou_Circular_Economy_Fuzzy_Set_Theory.pdf",
+    "SQL相关/SQL零基础入门速查.md",
+    "商分｜数分/商业分析岗位快速上手学习计划.md",
     "文献笔记-充电桩预约/6带收益和时间窗的多行程卡车-无人机协同配送问题_笔记.md",
     "文献笔记-充电桩预约/5基于可再生能源的电动汽车充电调度研究：离线与随机在线优化——笔记.md",
     "papers/6带收益和时间窗的多行程卡车-无人机协同配送问题.pdf",
@@ -196,21 +210,13 @@
     "文献笔记-充电桩预约/108 TSG2025 菜单机制.md",
     "文献笔记-充电桩预约/107 TRC2019 CPT行为建模.md",
     "文献笔记-充电桩预约/106 TITS2024 鲁棒调度.md",
-    "文献笔记-充电桩预约/105 AppliedEnergy 两时间尺度.md",
-    "文献笔记-充电桩预约/104 NatureComms 行为聚类.md",
-    "文献笔记-充电桩预约/103 OJVT综述 建地图.md",
     "papers/4基于评论数据的、考虑用户偏好的电动汽车充电站推荐译文.pdf",
     "papers/4基于评论数据的、考虑用户偏好的电动汽车充电站推荐.pdf",
     "papers/3基于卡车无人机协同配送的双目标应急物资运送优化.pdf",
     "papers/2充电站在线评论（eWOM）对电动汽车采纳的影响译文.pdf",
-    "papers/2充电站在线评论（eWOM）对电动汽车采纳的影响.pdf",
-    "papers/1 TRC2025 预约滚动分配_译文.pdf",
-    "papers/1 TRC2025 预约滚动分配.pdf",
-    "papers/5基于可再生能源的电动汽车充电调度研究：离线与随机在线优化.pdf",
     "文献笔记-充电桩预约/3基于卡车无人机协同配送的双目标应急物资运送优化_精读笔记.md",
     "文献笔记-充电桩预约/2 充电站在线评论（eWOM）对电动汽车采纳的影响——精读笔记.md",
     "文献笔记-充电桩预约/4基于评论数据的、考虑用户偏好的电动汽车充电站推荐——笔记.md",
-    "papers/e610fe4c92c2da91cec1b164e2e09e8e.pdf",
     "Pasted image 20260921120352.png",
     "Pasted image 20260921121823.png",
     "EV 共享充电与停车：考虑用户不准时的预约式动态滚动分配框架｜文献精读笔记.md",
@@ -223,9 +229,6 @@
     "papers_md/EV 共享充电与停车：考虑用户不准时的预约式动态滚动分配框架｜文献精读笔记.md",
     "papers_md/2025_张林静_卡车无人机协同应急物资双目标优化_思维导图.md",
     "papers_md/2024_Li_EVCS_Recommendation_UserPreference_LightGBM_SVD_思维导图.md",
-    "文献笔记-充电桩预约/000 索引 · 顶刊8篇.md",
-    "papers_md/2024_Gou_Circular_Economy_Fuzzy_Set_Theory_p031-038.md",
-    "papers_md/2024_Gou_Circular_Economy_Fuzzy_Set_Theory_p021-030.md",
     "未命名.canvas"
   ]
 }
