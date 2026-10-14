@@ -21,6 +21,8 @@ FROM employees RIGHT JOIN buildings  -- 保留 buildings 全部
  4.cross join 
 `CROSS JOIN` 是一种简单的关联查询，不需要任何条件来匹配行，它直接将左表的 **每一行** 与右表的 **每一行** 进行组合，返回的结果是两个表的笛卡尔积。
 
+5、写法对照表
+![[Pasted image 20261014143818.png]]
 ### 实战顺口溜
 
 > 内连接：左右随意。  
