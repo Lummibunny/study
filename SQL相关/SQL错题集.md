@@ -18,6 +18,9 @@ FROM employees RIGHT JOIN buildings  -- 保留 buildings 全部
 **3. INNER JOIN 才真的无所谓左右**  
 `A INNER JOIN B` 和 `B INNER JOIN A` 结果一样，因为内连接两边都只留配对成功的行，谁也不特殊。**只有外连接（LEFT/RIGHT）才对位置敏感**。
 
+ 4.cross join 
+`CROSS JOIN` 是一种简单的关联查询，不需要任何条件来匹配行，它直接将左表的 **每一行** 与右表的 **每一行** 进行组合，返回的结果是两个表的笛卡尔积。
+
 ### 实战顺口溜
 
 > 内连接：左右随意。  
@@ -43,5 +46,9 @@ building是空的标0，不是空的就标1
 ==END==
 4、时间函数
 ![[Pasted image 20261012204615.png]]
-5、其
+5、字符串处理
+函数 `UPPER` 将小写转换为大写
+函数 `LENGTH` 计算姓名长度：
+函数 `LOWER` 将大写转换为小写
+6、
 
