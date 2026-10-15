@@ -4,27 +4,18 @@ title: "Shared charging strategies at the electric bus depot: A robust optimizat
 authors: Huang et al.
 journal: Omega
 year: 2026
-volume: "144"
-pages: "103634"
-doi: 10.1016/j.omega.2026.103634
 pdf: "[[papers/2026_Huang_Reservation_Based_Shared_Charging_Bus_Depot.pdf]]"
-direction: [方向③日前+临时]
+direction:
+  - 方向③日前+临时
 priority: 最高
 difficulty: ★★★★
-status: 未读
 tags:
   - 论文/文献
-  - 充电桩预约
-  - 必读
 ---
 
 # 18 预约制共享充电：硬窗 vs 软窗
-
-## 一句话
-
 电动公交场站白天充电能力闲置 → 用**预约制（R-SC）**开放给私家车用户创收；难点是**不能牺牲公交的充电可靠性**，用鲁棒优化处理公交能耗不确定性。
 
-## 两种策略的对比（本文明亮处）
 
 | 策略 | 机制 |
 |---|---|
@@ -33,7 +24,6 @@ tags:
 
 实验结果：R-SC 显著优于现状。
 
-## 为什么对我最重要
 
 **"硬窗 vs 软窗"就是我"日前预留固定容量 vs 预约容量可弹性挤占"的另一种说法。** 这篇给了：
 - 一个现成的**对照组设计**（我论文的实验可以做"我们比硬窗好"）
@@ -46,13 +36,7 @@ tags:
 - 不确定性只放在主用户侧（公交能耗），次用户用预约锁定 → **不确定性分解**的写法
 - 两种管理策略对比的实验框架
 
-## 我的想法
-
-<!-- 读的时候往这里写 -->
-
-- 我的"公交"对应什么？——长期固定用户？小区居民？
-- 硬窗/软窗 → 我的上下界怎么写进约束？
 
 ---
 
-[[000 索引 · 第二批12篇]]
+
