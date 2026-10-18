@@ -7,8 +7,9 @@ year: 2026
 volume: "410"
 pages: "127537"
 doi: 10.1016/j.apenergy.2026.127537
-pdf: "[[papers/2026_Nikhil_Fluid_Vacation_Model_EV_Charging.pdf]]"
-direction: [方向②突发事件]
+pdf: "[[29.pdf]]"
+direction:
+  - 方向②突发事件
 priority: 低（工具箱补充，不急）
 difficulty: ★★★★★
 status: 未读

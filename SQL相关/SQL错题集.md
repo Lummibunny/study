@@ -35,10 +35,10 @@ FROM employees RIGHT JOIN buildings  -- 保留 buildings 全部
 2、**判奇偶就靠 `% 2`**——`奇数 % 2 = 1`。以后"每 3 行取一行"之类也是这个思路。
 
 # 三、常用统计函数
-1、`GROUP BY` 数据分组语法可以按某个col_name对数据进行分组，
+1、==`GROUP BY` 数据分组语法可以按某个col_name对数据进行分组，==
 - ·如：`GROUP BY Year`指对数据按年份分组， 相同年份的分到一个组里。如果把统计函数和`GROUP BY`结合，那统计结果就是对分组内的数据统计了.  
 - `GROUP BY` 分组结果的数据条数，就是分组数量，比如：`GROUP BY Year`，全部数据里有几年，就返回几条数据， 不管是否应用了统计函数.
-2、![[Pasted image 20260921121823.png]]3、case when 就是sql里的if else
+2、![[Pasted image 20260921121823.png]]3、==case when 就是sql里的if else==
 eg：
 CASE WHEN building IS NULL THEN 0 ELSE 1 END
 building是空的标0，不是空的就标1
@@ -46,13 +46,29 @@ building是空的标0，不是空的就标1
   ==WHEN 条件 THEN 结果1==
   ==ELSE 结果2==
 ==END==
-4、时间函数
+==4、时间函数==
 ![[Pasted image 20261012204615.png]]
-5、字符串处理
-函数 `UPPER` 将小写转换为大写
-函数 `LENGTH` 计算姓名长度：
-函数 `LOWER` 将大写转换为小写
-6、
+==5、字符串处理==
+- 函数 `UPPER` 将小写转换为大写
+- 函数 `LENGTH` 计算姓名长度：
+- 函数 `LOWER` 将大写转换为小写
+==6、开窗函数sum over==
+- 开窗函数的作用：允许我们在查询中进行对分组数据进行计算、 **同时保留原始行的详细信息** 。开窗函数可以与聚合函数（如 SUM、AVG、COUNT 等）结合使用，但与普通聚合函数不同，开窗函数不会导致结果集的行数减少。
+1、开窗函数并不是某个特定的函数，而是一种模板，
+	==任意函数+over（......）==
+==例如：sum/avg/count/max/min/rank....+over(.....)==
+![[Pasted image 20261016105855.png]]
+==公式：（计算字段名） over（partition  by 分组字段名）==
+聚合函数不能包含窗口函数，反过来也不行
+![[Pasted image 20261016104702.png]]
+==2、sum over order by，可以实现同组内数据的 **累加求和** 。==
+示例用法如下：
+```sql
+SUM/avg/max...(计算字段名) OVER (PARTITION BY 分组字段名 ORDER BY 排序字段 排序规则)
+```
+
+举一个应用场景：老师在每个班级里依次点名，每点到一个学生，老师都会记录当前已点到的学生们的分数总和。
+
 # 四、子查询
 子查询是指在一个查询语句内部 **嵌套** 另一个完整的查询语句，内层查询被称为子查询。子查询可以用于获取更复杂的查询结果或者用于过滤数据。
 当执行包含子查询的查询语句时，数据库引擎会首先执行子查询，然后将其结果作为条件或数据源来执行外层查询。
@@ -73,3 +89,10 @@ WHERE customer_id IN (
 
 ==2、 子查询进阶 - exists==
 	在子查询中的一种特殊类型是 "exists" 子查询，用于检查主查询的结果集是否存在满足条件的记录，它返回布尔值（True 或 False），而不返回实际的数据。
+	select name,age,class_id from student as s
+where not  exists (select 1 from class as c where s.class_id=c.id)
+	- 这里的子查询里面的select后面写 `1` 是在告诉读代码的人："我根本不需要这里的数据，只要知道'有没有'"——意图最明确；
+
+3、组合查询：==UNION 和 UNION ALL==。
+ - UNION 操作：它用于将两个或多个查询的结果集==合并，并去除重复的行== 。即如果两个查询的结果有相同的行，则只保留一行。
+- UNION ALL 操作：它也用于将两个或多个查询的结果集合并， **但不去除重复的行** 。即如果两个查询的结果有相同的行，则全部保留。

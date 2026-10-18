@@ -1,14 +1,16 @@
 ---
 type: 文献笔记
-title: "A spatial-temporal scheduling framework for EV charging with multi-mode coordination and user subjective uncertainty"
+title: A spatial-temporal scheduling framework for EV charging with multi-mode coordination and user subjective uncertainty
 authors: Zhang Z. et al.
 journal: Applied Energy
 year: 2025
 volume: "401"
 pages: "126818"
 doi: 10.1016/j.apenergy.2025.126818
-pdf: "[[papers/2025_Zhang_Spatial_Temporal_Subjective_Uncertainty.pdf]]"
-direction: [方向①车主行为差异, 方向②突发事件]
+pdf: "[[26.pdf]]"
+direction:
+  - 方向①车主行为差异
+  - 方向②突发事件
 priority: 中
 difficulty: ★★★★
 status: 未读
